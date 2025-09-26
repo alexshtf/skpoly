@@ -7,7 +7,7 @@ name = "skpoly"
 version = "0.1.0"
 description = "Polynomial basis transformers for scikit-learn."
 authors = [{name = "Alex Shtoff"}]
-readme = "LICENSE"
+readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 keywords = ["polynomials", "scikit-learn", "feature-engineering", "machine-learning"]
