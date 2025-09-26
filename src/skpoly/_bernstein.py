@@ -1,5 +1,5 @@
 import numpy as np
-from numpy.polynomial.bernstein import bvander
+from scipy.stats import binom
 
 from ._base import _BasePolynomialBasisTransformer
 
@@ -36,9 +36,15 @@ class BernsteinFeatures(_BasePolynomialBasisTransformer):
         return (X - lower) / (upper - lower)
 
     def _evaluate_basis(self, X: np.ndarray) -> np.ndarray:
-        vanders = [bvander(X[:, i], self.degree) for i in range(X.shape[1])]
-        if not vanders:
+        if X.shape[1] == 0:
             return np.empty((X.shape[0], 0, self.degree + 1), dtype=np.float64)
+
+        orders = np.arange(self.degree + 1)
+        vanders = []
+        for column in range(X.shape[1]):
+            probabilities = binom.pmf(orders, self.degree, X[:, [column]])
+            vanders.append(probabilities.astype(np.float64, copy=False))
+
         return np.stack(vanders, axis=1)
 
 
