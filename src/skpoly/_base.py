@@ -1,5 +1,4 @@
 import itertools
-from typing import Tuple
 
 import numpy as np
 from sklearn.base import BaseEstimator, TransformerMixin
@@ -13,7 +12,7 @@ class _BasePolynomialBasisTransformer(BaseEstimator, TransformerMixin):
         self,
         *,
         degree: int = 3,
-        feature_range: Tuple[float, float] = (0.0, 1.0),
+        feature_range: tuple[float, float] = (0.0, 1.0),
         include_bias: bool = False,
         tensor_product: bool = False,
     ) -> None:
@@ -86,9 +85,7 @@ class _BasePolynomialBasisTransformer(BaseEstimator, TransformerMixin):
         )
 
         if X.shape[1] != self.n_features_in_:
-            raise ValueError(
-                "X has a different number of features than seen during fit"
-            )
+            raise ValueError("X has a different number of features than seen during fit")
 
         lower, upper = self.feature_range_
         nan_mask = np.isnan(X)

@@ -31,10 +31,12 @@ def test_missing_values_produce_zero_features_legendre():
     transformed = transformer.transform(test_data)
 
     expected_second_row = np.array([1.0, 0.0, -0.5])
-    expected = np.vstack([
-        np.zeros_like(expected_second_row),
-        expected_second_row,
-    ])
+    expected = np.vstack(
+        [
+            np.zeros_like(expected_second_row),
+            expected_second_row,
+        ]
+    )
     np.testing.assert_allclose(transformed, expected)
 
 
@@ -57,7 +59,7 @@ def test_tensor_products_vanish_when_a_column_is_missing():
 
 
 def test_multi_column_transform_matches_single_column_concatenation():
-    params = dict(degree=2, include_bias=True, tensor_product=False)
+    params = {"degree": 2, "include_bias": True, "tensor_product": False}
     training_data = np.array(
         [
             [0.0, 0.25],

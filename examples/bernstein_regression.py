@@ -2,11 +2,11 @@
 
 # %%
 import numpy as np
+from sklearn.linear_model import Ridge
 from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import QuantileTransformer
-from sklearn.linear_model import Ridge
 
 from skpoly import BernsteinFeatures
 
@@ -20,9 +20,7 @@ y = (
     + random_state.normal(scale=0.1, size=X.shape[0])
 )
 
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.25, random_state=random_state
-)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=random_state)
 
 # %%
 n_quantiles = min(100, X_train.shape[0])
