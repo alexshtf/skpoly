@@ -1,7 +1,7 @@
 # skpoly
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/axshtoff/skpoly/main/skpoly_bernstein_badge_light.png" alt="skpoly logo" width="360" />
+  <img src="https://raw.githubusercontent.com/alexshtf/skpoly/refs/heads/master/skpoly_bernstein_badge_light.png" alt="skpoly logo" width="360" />
 </p>
 
 `skpoly` provides drop-in polynomial feature generators that integrate with scikit-learn pipelines. The library focuses on smooth orthogonal bases such as Bernstein and Legendre polynomials, letting you capture non-linear structure with well-conditioned numerical behavior.
