@@ -37,10 +37,9 @@ class LegendreFeatures(_BasePolynomialBasisTransformer):
         return ((X - lower) * 2.0 / span) - 1.0
 
     def _evaluate_basis(self, X: np.ndarray) -> np.ndarray:
-        vanders = [legvander(X[:, i], self.degree) for i in range(X.shape[1])]
-        if not vanders:
+        if X.shape[1] == 0:
             return np.empty((X.shape[0], 0, self.degree + 1), dtype=np.float64)
-        return np.stack(vanders, axis=1)
+        return legvander(X, self.degree)
 
 
 __all__ = ["LegendreFeatures"]
