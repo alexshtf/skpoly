@@ -6,6 +6,8 @@
 
 ## Code Style
 - Strive for concise, intention-revealing code—avoid "slop" such as redundant variables, overly defensive checks, and sprawling helper layers.
+- Use SciPy / NumPy to the extent possible, including vectorization whenever possible.
+- Use Scikit-Learn utilities, such as the classes from the `sklearn.base` package, and functions in the `sklearn.utils` package.
 - Favor self-explanatory identifiers, short functions, and cohesive classes so the code documents itself.
 - Only add comments when they communicate non-obvious context or rationale; do not restate what the code already expresses.
 - Follow type hints consistently across the codebase and prefer explicit imports over wildcard imports.
