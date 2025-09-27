@@ -43,6 +43,11 @@ dev = [
     "pre-commit>=4.3.0",
     "ruff>=0.13.2",
 ]
+docs = [
+    "furo>=2024.8.6",
+    "sphinx>=7.4.7",
+    "sphinx-autodoc-typehints>=2.2.3",
+]
 
 [tool.ruff]
 line-length = 100

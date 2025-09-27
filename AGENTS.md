@@ -15,6 +15,7 @@
 ## Testing & Tooling
 - Add or update tests alongside behavioral changes. Prefer focused unit tests in `tests/` and keep fixtures minimal.
 - Run the relevant test suite (typically `pytest`) before submitting changes, and ensure static checks (e.g., `ruff`, `mypy`) pass when they apply to the touched areas.
+- Build the Sphinx documentation with `uv run --group docs sphinx-build -b html docs docs/_build/html` before shipping doc updates.
 
 ## Git & PR Workflow
 - Keep commits scoped and descriptive. Reference the impacted modules or features in the commit message subject.
