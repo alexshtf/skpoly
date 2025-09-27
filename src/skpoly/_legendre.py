@@ -34,7 +34,8 @@ class LegendreFeatures(_BasePolynomialBasisTransformer):
     def _scale_to_basis(self, X: np.ndarray) -> np.ndarray:
         lower, upper = self.feature_range_
         span = upper - lower
-        return ((X - lower) * 2.0 / span) - 1.0
+        scaled = ((X - lower) * 2.0 / span) - 1.0
+        return np.clip(scaled, -1.0, 1.0, out=scaled)
 
     def _evaluate_basis(self, X: np.ndarray) -> np.ndarray:
         if X.shape[1] == 0:

@@ -33,7 +33,8 @@ class BernsteinFeatures(_BasePolynomialBasisTransformer):
 
     def _scale_to_basis(self, X: np.ndarray) -> np.ndarray:
         lower, upper = self.feature_range_
-        return (X - lower) / (upper - lower)
+        scaled = (X - lower) / (upper - lower)
+        return np.clip(scaled, 0.0, 1.0, out=scaled)
 
     def _evaluate_basis(self, X: np.ndarray) -> np.ndarray:
         if X.shape[1] == 0:
