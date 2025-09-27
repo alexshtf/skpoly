@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: If you use this project, please cite it using the metadata from this file.
+title: skpoly
+abstract: skpoly provides scikit-learn compatible polynomial feature generators
+  built on smooth orthogonal bases such as Bernstein and Legendre polynomials.
+authors:
+  - family-names: Shtoff
+    given-names: Alex
+keywords:
+  - machine learning
+  - scikit-learn
+  - polynomial features
+license: MIT
+repository-code: https://github.com/alexshtf/skpoly
+url: https://github.com/alexshtf/skpoly
+version: 0.1.0
+preferred-citation:
+  type: software
+  authors:
+    - family-names: Shtoff
+      given-names: Alex
+  title: skpoly: Polynomial basis transformers for scikit-learn
+  version: 0.1.0
+  repository-code: https://github.com/alexshtf/skpoly
+
